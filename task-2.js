@@ -17,7 +17,6 @@ const createProduct = ingredient => {
 };
 
 const elements = ingredients.map(createProduct);
-
 const title = document.createElement('h2');
 title.textContent = 'Ингридиенты';
 elementsRef.before(title);

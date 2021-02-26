@@ -8,6 +8,5 @@ function inputHandlerFocus(event) {
     
     return (titleRef.textContent = event.target.value);
   }
-
   return (titleRef.textContent = 'незнакомец');
 }

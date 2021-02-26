@@ -3,7 +3,6 @@ const removeListenerBtn = document.querySelector("[data-action='decrement']");
 const counterRef = document.querySelector('#value');
 
 let counterValue = 0;
-
 const increment = () => {
 
   counterValue += 1;

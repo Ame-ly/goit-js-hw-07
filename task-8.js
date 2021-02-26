@@ -12,8 +12,9 @@ function createBoxes(amount) {
   let size = 30;
 
   for (let i = 0; i < amount; i += 1) {
+    
     boxesRef.appendChild(
-      document.createElement('div'),
+      document.createElement('div')
     ).style = `width: ${size}px; height: ${size}px; background-color: 
      rgb(${createRandomColor()}, ${createRandomColor()}, ${createRandomColor()}); margin: auto`;
 

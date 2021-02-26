@@ -16,6 +16,7 @@ const images = [
   },
 ];
 
+
 const galleryRef = document.querySelector('#gallery');
 galleryRef.classList.add('gallery-js');
 

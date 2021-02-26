@@ -2,6 +2,7 @@ const inputRef = document.querySelector('#validation-input');
 console.log();
 
 inputRef.onblur = function () {
+  
   const number = inputRef.value.length;
   number === Number(inputRef.getAttribute('data-length')) ? inputRef.className = 'valid': inputRef.className = 'invalid';
    if (number === 0) {

@@ -1,8 +1,8 @@
-[...document.querySelectorAll('ul#categories')].map(category => {
-  const numberOfCategories = category.children.length;
-  console.log(`В списке ${numberOfCategories} категории.`);
+const categoryRef = document.querySelector('ul#categories');
 
-  const titleRef = category.querySelector('h2').textContent;
-  const numberEl = category.querySelectorAll('li').length;
-  console.log(`Категория: ${titleRef}. Количество элементов: ${numberEl}`);
+console.log(`В списке ${categoryRef.children.length} категории.`);
+
+categoryRef.querySelectorAll('.item').forEach(el => {
+  console.log(`• Категория:${el.querySelector('h2').textContent}
+• Количество элементов:${el.querySelector('ul').children.length}`);
 });

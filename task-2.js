@@ -17,10 +17,20 @@ const createProduct = ingredient => {
 };
 
 const elements = ingredients.map(createProduct);
-console.log(elements);
 
 const title = document.createElement('h2');
 title.textContent = 'Ингридиенты';
 elementsRef.before(title);
 elementsRef.append(...elements);
 console.log(elementsRef);
+
+
+
+// const searchNewRef = document.querySelector('#ingredients');
+// ingredients.forEach(ingredientsItems);
+
+// function ingredientsItems(el) {
+
+//   document.createElement('li').textContent = el;
+//   searchNewRef.appendChild(addList);
+// }

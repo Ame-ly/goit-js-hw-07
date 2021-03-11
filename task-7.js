@@ -7,3 +7,6 @@ function handleInputRange(e) {
   
   console.log((textRef.style.fontSize = e.currentTarget.value + 'px'));
 }
+
+
+

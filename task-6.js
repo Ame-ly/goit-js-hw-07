@@ -1,14 +1,36 @@
 const inputRef = document.querySelector('#validation-input');
-console.log();
+inputRef.addEventListener('blur', checkInput);
 
-inputRef.onblur = function () {
+function checkInput(e) {
+
+  const numberEvent = e.target.value.length;
+  const numberRef = Number(inputRef.getAttribute('data-length'));
   
-  const number = inputRef.value.length;
-  number === Number(inputRef.getAttribute('data-length')) ? inputRef.className = 'valid': inputRef.className = 'invalid';
-   if (number === 0) {
+  numberEvent === numberRef
+    ? (inputRef.className = 'valid')
+    : (inputRef.className = 'invalid');
+  if (numberEvent === 0) {
     inputRef.className = '';
   }
-};
+}
+
+// function checkInput(e) {
+//  const number = Number(inputRef.getAttribute('data-length'));
+//   const length=e.currentTarget.value.length
+//   if (length === 0) {
+//      inputRef.className = '';
+//   } else if (length === number) {
+//     updateClass('valid', 'invalid');
+//   } else {
+//     updateClass('invalid', 'valid');
+//   }
+
+// }
+
+// function updateClass(addClass, remClass) {
+//   inputRef.classList.add(addClass);
+//   inputRef.classList.remove(remClass);
+// }
 
 // inputRef.onblur = function () {
 //   const number = inputRef.value.length;

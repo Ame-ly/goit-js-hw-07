@@ -4,7 +4,7 @@ const titleRef = document.querySelector('#name-output');
 inputRef.addEventListener('input', inputHandlerFocus);
 
 function inputHandlerFocus(event) {
-  if (event.target.value !== '') {
+  if (event.target.value) {
     
     return (titleRef.textContent = event.target.value);
   }

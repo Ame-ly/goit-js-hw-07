@@ -1,22 +1,39 @@
 const inputRef = document.querySelector('#validation-input');
 inputRef.addEventListener('blur', checkInput);
 
-function checkInput(e) {
+// function checkInput(e) {
 
-  const numberEvent = e.target.value.length;
-  const numberRef = Number(inputRef.getAttribute('data-length'));
+//   const numberEvent = e.target.value.length;
+//   const numberRef = Number(inputRef.getAttribute('data-length'));
   
-  numberEvent === numberRef
-    ? (inputRef.className = 'valid')
-    : (inputRef.className = 'invalid');
-  if (numberEvent === 0) {
-    inputRef.className = '';
-  }
-}
+//   numberEvent === numberRef
+//     ? (inputRef.className = 'valid')
+//     : (inputRef.className = 'invalid');
+//   if (numberEvent === 0) {
+//     inputRef.className = '';
+//   }
+// }
 
+function checkInput(e) {
+  const number = Number(inputRef.getAttribute('data-length'));
+  const length = e.currentTarget.value.length;
+  if (length === 0) {
+    inputRef.className = '';
+  } else if (length === number) {
+    updateClass('valid', 'invalid');
+  } else {
+    updateClass('invalid', 'valid');
+  }
+
+}
+inputRef.addEventListener('focus', () => {
+   inputRef.classList.remove('valid', 'invalid');
+})
+
+ //или
 // function checkInput(e) {
 //  const number = Number(inputRef.getAttribute('data-length'));
-//   const length=e.currentTarget.value.length
+//   const length = e.currentTarget.value.length;
 //   if (length === 0) {
 //      inputRef.className = '';
 //   } else if (length === number) {
@@ -27,10 +44,11 @@ function checkInput(e) {
 
 // }
 
-// function updateClass(addClass, remClass) {
-//   inputRef.classList.add(addClass);
-//   inputRef.classList.remove(remClass);
-// }
+function updateClass(addClass, remClass) {
+  inputRef.classList.add(addClass);
+  inputRef.classList.remove(remClass);
+}
+
 
 // inputRef.onblur = function () {
 //   const number = inputRef.value.length;
